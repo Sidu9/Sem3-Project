@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Timetable Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('users_page') }}">Users</a></li>
+                <li><a href="{{ url_for('subjects_page') }}">Subjects</a></li>
+                <li><a href="{{ url_for('rooms_page') }}">Rooms</a></li>
+                <li><a href="{{ url_for('classes_page') }}">Classes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Timetable</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>Room</th>
+                <th>Day</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class_entry in classes %}
+            <tr>
+                <td>{{ class_entry["subject_id"] }}</td>
+                <td>{{ class_entry["teacher_id"] }}</td>
+                <td>{{ class_entry["room_id"] }}</td>
+                <td>{{ class_entry["day_of_week"] }}</td>
+                <td>{{ class_entry["start_time"] }}</td>
+                <td>{{ class_entry["end_time"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

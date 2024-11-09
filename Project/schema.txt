@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "user_id": "ObjectId",  
+      "name": "John Doe",  
+      "email": "john.doe@example.com",  
+      "password": "hashed_password",  
+      "role": "admin",  
+      "subjects": ["subject_id_1", "subject_id_2"]
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": "ObjectId",  
+      "name": "Mathematics",  
+      "code": "MATH101",  
+      "teachers": ["user_id_1", "user_id_2"]
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "ObjectId",  
+      "room_number": "A101",  
+      "capacity": 30
+    }
+  ],
+  "classes": [
+    {
+      "class_id": "ObjectId",  
+      "subject_id": "subject_id_1",  
+      "teacher_id": "user_id_1",  
+      "room_id": "room_id_1",  
+      "start_time": "2024-11-09T09:00:00",  
+      "end_time": "2024-11-09T10:00:00",  
+      "day_of_week": "Monday"
+    }
+  ]
+}
